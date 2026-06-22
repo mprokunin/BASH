@@ -1,4 +1,9 @@
-CSVFILE=gpdb-2026-06-17_000000
+if [ $# -lt 1 ]; then
+        echo "Usage: $0 <File to grep>"
+        exit    
+else                    
+        CSVFILE=$1
+fi      
 gunzip /data/master/gpseg-1/pg_log/${CSVFILE}.csv.gz
 grep VMEM /data/master/gpseg-1/pg_log/${CSVFILE}.csv > /data/master/gpseg-1/pg_log/${CSVFILE}.csv.vmem
 VMEMFILE=/data/master/gpseg-1/pg_log/${CSVFILE}.csv.vmem
