@@ -13,7 +13,7 @@ gunzip $BASEURL/${CSVFILE}.csv.gz
 grep VMEM $BASEURL/${CSVFILE}.csv > $BASEURL/${CSVFILE}.csv.vmem
 VMEMFILE=$BASEURL/${CSVFILE}.csv.vmem
 
-# Find these arr items 
+# Find this arr items 
 declare -a arr=(
 "accounting_transaction" 
 "authorizations_w_clearings_ins_2stage_authorization" 
